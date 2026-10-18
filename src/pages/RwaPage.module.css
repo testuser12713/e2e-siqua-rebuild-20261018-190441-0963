@@ -41,6 +41,8 @@
   margin-top: 1.3rem;
   font-size: clamp(3rem, 7.5vw, 7rem);
   line-height: 0.92;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .heroAside {
@@ -130,6 +132,12 @@
 .servicesTitle {
   margin-top: 0.9rem;
   font-size: var(--display-3);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.servicesHeading {
+  min-width: 0;
 }
 
 .servicesCount {
@@ -137,6 +145,7 @@
   font-size: var(--text-xs);
   letter-spacing: 0.06em;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .serviceGrid {
@@ -257,6 +266,12 @@
 }
 
 @media (max-width: 700px) {
+  .servicesHead {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
   .crosslinksGrid {
     grid-template-columns: 1fr;
   }
