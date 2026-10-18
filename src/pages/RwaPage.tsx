@@ -77,7 +77,7 @@ export default function RwaPage(): JSX.Element {
         <Section id="leistungen">
           <Reveal>
             <header className={styles.servicesHead}>
-              <div>
+              <div className={styles.servicesHeading}>
                 <p className={styles.eyebrow}>Leistungen</p>
                 <h2 className={styles.servicesTitle} id="rwa-services-title">
                   {rwaArea.title}
