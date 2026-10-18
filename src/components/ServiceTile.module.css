@@ -1,0 +1,66 @@
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 196px;
+  padding: clamp(1.2rem, 2.2vw, 1.75rem);
+  background: var(--white);
+  color: var(--fg);
+  transition: background-color 0.28s var(--ease-out);
+}
+
+.tile:hover,
+.tile:focus-within {
+  background: var(--grey-50);
+}
+
+.tile:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.icon img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  transition: transform 0.34s var(--ease-out);
+}
+
+.tile:hover .icon img,
+.tile:focus-within .icon img {
+  transform: translateY(-3px);
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--grey-500);
+  letter-spacing: 0.06em;
+}
+
+.title {
+  margin-top: auto;
+  padding-top: var(--space-5);
+  font-family: var(--font-display);
+  font-size: clamp(1.08rem, 1.35vw, 1.28rem);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.022em;
+  text-wrap: pretty;
+}
