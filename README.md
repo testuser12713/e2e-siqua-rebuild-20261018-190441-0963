@@ -19,6 +19,18 @@ Website; Referenzen, Kundenstimmen und erfundene Angaben gibt es nicht.
   Schatten- und Bewegungstokens
 - Vitest und Testing Library für die automatisierten Tests
 
+## Dienst `web`
+
+Das Produkt besteht aus dem einen Dienst `web`: der Website selbst. Er liegt in
+der Projektwurzel (`./`), ist ein statischer Vite-Build ohne eigenen
+Serverprozess und wird im Betrieb als Verzeichnis `dist/` ausgeliefert.
+
+| Dienst | Was es ist | Wo es läuft | Start |
+| --- | --- | --- | --- |
+| `web` | Website (React/Vite, statischer Produktionsbuild) | Projektwurzel `./`, Auslieferung aus `dist/` | `npm ci && npm run build && npm start` |
+
+In der Entwicklung startet `npm run dev` denselben Dienst mit Hot Reload.
+
 ## Installation
 
 Voraussetzung ist Node.js 22 (oder Node.js 20.19 und neuer) mit npm.
@@ -40,14 +52,15 @@ standardmäßig unter <http://localhost:5173>.
 
 ```bash
 npm run build
-npm run preview
+npm start
 ```
 
 `npm run build` prüft zuerst die TypeScript-Typen und erzeugt danach den
-statischen Build im Verzeichnis `dist/`. `npm run preview` liefert diesen Build
-lokal aus. Für den Betrieb genügt ein Webserver, der die Dateien aus `dist/`
-ausliefert und unbekannte Pfade auf `index.html` zurückführt, damit die
-Adressen der Seiten auch beim direkten Aufruf oder Neuladen funktionieren.
+statischen Build im Verzeichnis `dist/`. `npm start` liefert diesen Build lokal
+aus (dasselbe wie `npm run preview`). Für den Betrieb genügt ein Webserver, der
+die Dateien aus `dist/` ausliefert und unbekannte Pfade auf `index.html`
+zurückführt, damit die Adressen der Seiten auch beim direkten Aufruf oder
+Neuladen funktionieren.
 
 ## Tests
 
